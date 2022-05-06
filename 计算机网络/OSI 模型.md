@@ -27,8 +27,8 @@ OSI 七层模型，自下而上分别为
 
 定义传输数据的协议端口号以及流量控制和差错校验
 
-- [TCP](TCP#TCP)
-- [UDP](UDP#UDP)
+- [TCP](TCP.md#TCP)
+- [UDP](UDP.md#UDP)
 
 ### 会话层
 
@@ -47,7 +47,7 @@ OSI 七层模型，自下而上分别为
 
 网络服务与最终用户的接口
 
-- HTTP
+- [HTTP](HTTP%20和%20HTTPS.md#HTTP%20和%20HTTPS)
 - FTP
 - SMTP
 - DNS
