@@ -30,7 +30,7 @@ Client -->> Client: ESTABLISHED
 Server -->> Server: ESTABLISHED
 ```
 
-1. Client 向 Server 发送含有同步序列号的标识位数据段，请求建立链接：`SYN=1, seq=x`，进入 SYN_SENT 状态
+1. Client 向 Server 发送含有同步序列号的标识位数据段，请求建立连接：`SYN=1, seq=x`，进入 SYN_SENT 状态
 2. Server 收到请求后发送含有确认应答、同步序列号和标识位的数据段：`SYN=1, ACK=1, seq=y, ack=x+1`，进入 SYN_RCVD 状态
 3. Client 收到后发送确认应答：`ACK=1, seq=x+1, ack=y+1`，进入 ESTABLISHED 状态；Server 收到应答后也进入 ESTABLISHED 状态，连接建立
 
