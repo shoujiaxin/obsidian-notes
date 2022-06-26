@@ -87,12 +87,31 @@ IEFT 在标准化 SSL 时将其改名为 TLS (Transport Layer Security)。SSL �
 
 ### 连接过程
 
+```mermaid
+sequenceDiagram
+	Client ->> Server: Client Hello
+	Server ->> Client: Server Hello
+	Server ->> Client: 公钥证书
+	Server ->> Client: Server Hello Done
+	Note over Client, Server: 第一次 SSL 握手结束
+	Client -->> Client: 校验证书
+	Client ->> Server: Client Key Exchange
+	Client ->> Server: Change Cipher Spec
+	Client ->> Server: Finished
+	Server ->> Client: Change Cipher Spec
+	Server ->> Client: Finished
+	Note over Client, Server: SSL 连接建立
+	Client ->> Server: HTTP Request
+	Server ->> Client: HTTP Response
+```
+
 1. 客户端发送 Client Hello 报文开始 SSL 通信。报文中包含客户端支持的 SSL 版本、加密组件列表（加密算法和密钥长度等）
 2. 服务端可进行 SSL 通信时，发送 Server Hello 作为应答。报文中包含服务端支持的 SSL 版本以及筛选后的、客户端发来的加密组件列表
 3. 服务端发送公钥证书报文
 4. 服务端发送 Server Hello Done 报文，表示第一次 SSL 握手结束
-5. 客户端校验服务端发来的证书：查找并比对操作系统中受信任的证书发布机构 (CA) 证书
-6. 客户端发送 Client Key Exchange 报文。报文包含一个使用证书中公钥加密的随机数，作为之后对称加密的密钥
+5. 客户端校验服务端发来证书的有效性：查找并比对操作系统中受信任的证书发布机构 (CA) 证书
+6. 客户端发送 Client Key Exchange 报文。报文包含一个使用证书中公钥加密的随机数 (pre-master secret)，用于生成之后对称加密的密钥
+   > 客户端和服务端根据 pre-master secret 生成 master secret，再通过 master secret 生成对称加密的密钥
 7. 客户端发送 Change Cipher Spec 报文，提示服务端之后的通信采用对称加密
 8. 客户端发送 Finished 报文。该报文包含连接至今全部报文的整体校验值
 9. 服务端发送 Change Cipher Spec 报文
