@@ -4,11 +4,13 @@
   "switcher",
   "graph",
   "backlink",
+  "outgoing-link",
   "page-preview",
   "note-composer",
   "command-palette",
+  "slash-command",
   "editor-status",
   "outline",
   "word-count",
-  "open-with-default-app"
+  "slides"
 ]
