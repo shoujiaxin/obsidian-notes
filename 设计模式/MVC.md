@@ -1,5 +1,3 @@
-# MVC
-
 ```mermaid
 stateDiagram-v2
 View --> View: 更改内部状态

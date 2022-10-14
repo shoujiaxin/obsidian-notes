@@ -1,5 +1,3 @@
-# Property Wrappers
-
 ## All property wrappers
 
 ### `@AppStorage`

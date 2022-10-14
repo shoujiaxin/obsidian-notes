@@ -1,5 +1,3 @@
-# Core Data
-
 ## 架构
 
 一个基本的 Core Data 栈由 4 个主要部分：

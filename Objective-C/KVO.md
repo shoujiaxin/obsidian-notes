@@ -1,5 +1,3 @@
-# KVO
-
 Key-Value Observing (KVO) 是一种允许对象通知其他对象其指定属性发生变化的机制。
 
 ## 注册 KVO

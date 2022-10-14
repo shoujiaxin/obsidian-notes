@@ -1,5 +1,3 @@
-# WebSocket
-
 ## 特点
 
 - 基于 [TCP](TCP.md#TCP) 的全双工通信协议
