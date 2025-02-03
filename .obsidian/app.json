@@ -7,5 +7,7 @@
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
   "spellcheck": true,
-  "fileSortOrder": "alphabetical"
+  "fileSortOrder": "alphabetical",
+  "showIndentGuide": false,
+  "useTab": false
 }
