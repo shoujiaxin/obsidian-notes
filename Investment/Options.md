@@ -14,6 +14,11 @@ Relationship of the option price and stock price:
 
 **Intrinsic value**:
 
-- For call option, it's the amount by which the stock price exceeds the striking prices if the option is in-the-money; and the value is 0 if the call is out-of-the-money
+|                  |             Call             |             Put              |
+| ---------------- | :--------------------------: | :--------------------------: |
+| In-the-money     | Stock price > Striking price | Stock price < Striking price |
+| Out-of-the-money | Stork price < Striking price | Stock price > Striking price |
+
+The value is 0 if the option is out-of-the-money
 
 $\text{Call time value premium} = \text{Call option price} + \text{Striking price} - \text{Stock price}$
